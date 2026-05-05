@@ -1,0 +1,17 @@
+{
+  "name": "calculo-de-frete",
+  "version": "1.0.0",
+  "description": "Aplicacao educacional para calculo de frete com Node.js e JavaScript.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "frete",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
+}
