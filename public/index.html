@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculo de Frete</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="calculator" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">JavaScript + Node.js</p>
+          <h1 id="page-title">Calculo de Frete</h1>
+          <p>Informe os dados do pedido para calcular o valor final da entrega.</p>
+        </div>
+
+        <form id="shipping-form" class="form">
+          <label class="field">
+            <span>Peso do pedido (kg)</span>
+            <input
+              id="weight"
+              name="weight"
+              type="number"
+              min="0"
+              step="0.1"
+              placeholder="Ex.: 7.5"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span>Regiao de entrega</span>
+            <select id="region" name="region" required>
+              <option value="">Selecione</option>
+              <option value="Sul">Sul</option>
+              <option value="Sudeste">Sudeste</option>
+              <option value="Centro-Oeste">Centro-Oeste</option>
+              <option value="Norte">Norte</option>
+              <option value="Nordeste">Nordeste</option>
+            </select>
+          </label>
+
+          <fieldset class="delivery-options">
+            <legend>Tipo de entrega</legend>
+
+            <label class="radio-card">
+              <input type="radio" name="deliveryType" value="normal" checked />
+              <span>
+                <strong>Normal</strong>
+                <small>Sem acrescimo</small>
+              </span>
+            </label>
+
+            <label class="radio-card">
+              <input type="radio" name="deliveryType" value="expressa" />
+              <span>
+                <strong>Expressa</strong>
+                <small>Acrescimo de 50%</small>
+              </span>
+            </label>
+          </fieldset>
+
+          <button type="submit">Calcular frete</button>
+        </form>
+      </section>
+
+      <aside class="summary" aria-live="polite">
+        <p class="summary-label">Valor final</p>
+        <strong id="total">R$ 0,00</strong>
+
+        <dl class="breakdown">
+          <div>
+            <dt>Frete base</dt>
+            <dd id="base-cost">R$ 0,00</dd>
+          </div>
+          <div>
+            <dt>Adicional por peso</dt>
+            <dd id="weight-cost">R$ 0,00</dd>
+          </div>
+          <div>
+            <dt>Entrega expressa</dt>
+            <dd id="express-cost">R$ 0,00</dd>
+          </div>
+        </dl>
+
+        <p id="message" class="message">
+          Preencha os campos para ver o detalhamento do calculo.
+        </p>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
